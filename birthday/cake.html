@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Blow the Candles 🎂</title>
+<style>
+  body {
+    margin:0; height:100vh; display:flex; flex-direction: column; align-items:center; justify-content:center;
+    background:#fceabb;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select:none;
+  }
+  h2 {
+    margin-bottom: 5rem;
+    color:#7e5109;
+    text-shadow: 0 0 5px #f4d03f;
+  }
+  .cake {
+    background: #ff6f91;
+    border-radius: 0 0 60px 60px;
+    width: 250px;
+    height: 160px;
+    position: relative;
+    box-shadow: 0 8px 10px rgba(0,0,0,0.2);
+  }
+  .candles {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: -60px;
+    width: 100%;
+  }
+  .candle {
+    width: 12px;
+    height: 60px;
+    background: white;
+    margin: 0 10px;
+    border-radius: 3px;
+    position: relative;
+  }
+  .flame {
+    width: 14px;
+    height: 25px;
+    background: linear-gradient(to top, orange, yellow);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: flicker 0.3s infinite alternate;
+    filter: drop-shadow(0 0 2px orange);
+  }
+  @keyframes flicker {
+    0% { transform: translateX(-50%) scale(1); opacity: 1;}
+    100% { transform: translateX(-50%) scale(1.2); opacity: 0.7;}
+  }
+  #continueBtn {
+    margin-top: 3rem;
+    background: #f8b500;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 1rem;
+    cursor: pointer;
+    display:none;
+    box-shadow: 0 0 20px #f8b500;
+  }
+</style>
+</head>
+<body>
+  <h2>Blow the Candles 🎂 (Click anywhere)</h2>
+  <div class="cake">
+    <div class="candles">
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+    </div>
+  </div>
+  <button id="continueBtn" onclick="goToWishes()">Continue</button>
+
+  <script>
+    document.body.onclick = function() {
+      const flames = document.querySelectorAll('.flame');
+      flames.forEach(f => f.style.display = 'none');
+      document.getElementById('continueBtn').style.display = 'inline-block';
+      // Remove click event so it only works once
+      document.body.onclick = null;
+    }
+
+    function goToWishes() {
+      window.location.href = "wishes.html";
+    }
+  </script>
+</body>
+</html>
