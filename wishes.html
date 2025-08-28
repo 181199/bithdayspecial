@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Happy Birthday Wishes 🎉</title>
+<style>
+  body {
+    margin:0; height:100vh; overflow:hidden;
+    background: linear-gradient(to top, #ffecd2 0%, #fcb69f 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display:flex; flex-direction: column; align-items: center; justify-content: center;
+    color: #a52142;
+  }
+  h1 {
+    margin-bottom: 3rem;
+    font-size: 3rem;
+    text-shadow: 0 0 10px #fff3;
+  }
+  #memoriesBtn {
+    margin-top: auto;
+    margin-bottom: 3rem;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    color: white;
+    background: #a52142;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    box-shadow: 0 0 20px #a52142;
+  }
+  .symbol {
+    position: fixed;
+    bottom: -40px;
+    font-size: 2rem;
+    animation-name: floatUp;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    user-select:none;
+    pointer-events:none;
+  }
+  @keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-110vh); opacity: 0; }
+  }
+
+  .slideshow-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+  }
+  .slideshow {
+    position: relative;
+    width: 300px;
+    height: 500px;
+  }
+  .slideshow img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fadeAnimation 25s infinite;
+  }
+
+  /* Different delays for each image per slideshow */
+  .slideshow.left img:nth-child(1) { animation-delay: 0s; }
+  .slideshow.left img:nth-child(2) { animation-delay: 5s; }
+  .slideshow.left img:nth-child(3) { animation-delay: 10s; }
+  .slideshow.left img:nth-child(4) { animation-delay: 15s; }
+  .slideshow.left img:nth-child(5) { animation-delay: 20s; }
+
+  /*.slideshow.middle img:nth-child(1) { animation-delay: 0s; }
+  .slideshow.middle img:nth-child(2) { animation-delay: 3s; }
+  .slideshow.middle img:nth-child(3) { animation-delay: 6s; }
+  .slideshow.middle img:nth-child(4) { animation-delay: 9s; }
+  .slideshow.middle img:nth-child(5) { animation-delay: 12s; }*/
+
+  .slideshow.right img:nth-child(1) { animation-delay: 0s; }
+  .slideshow.right img:nth-child(2) { animation-delay: 5s; }
+  .slideshow.right img:nth-child(3) { animation-delay: 10s; }
+  .slideshow.right img:nth-child(4) { animation-delay: 15s; }
+  .slideshow.right img:nth-child(5) { animation-delay: 20s; }
+
+  @keyframes fadeAnimation {
+    0%   { opacity: 0; }
+    4%   { opacity: 1; }
+    20%  { opacity: 1; }
+    24%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+</style>
+</head>
+<body>
+  <h1>🎉 Happy Birthday! 🎉</h1>
+
+<div class="slideshow-container">
+  	<div class="slideshow left">
+
+  	<img src="https://drive.google.com/thumbnail?id=1Sh-0z-CMC26QcxMOuGOQpBVthf5URC9m&sz=w1000" alt="Birthday Photo 1" />
+	<img src="https://drive.google.com/thumbnail?id=1x4xgletvotP41jXG-mpBfuay0ummxnRK&sz=w1000" alt="Birthday Photo 2" />
+	<img src="https://drive.google.com/thumbnail?id=1WFvYpZTDhdDECThEof6fvC_OHVGL3tS5&sz=w1000" alt="Birthday Photo 3" />
+	<img src="https://drive.google.com/thumbnail?id=10B946xNb3xEDQbDZtIk3MVC5FqxeqpYT&sz=w1000" alt="Birthday Photo 4" />
+	<img src="https://drive.google.com/thumbnail?id=1ikiqlrQi_yjMEAQj1mvZ-bn2g75jRhng&sz=w1000" alt="Birthday Photo 5" />
+
+ 	 	</div>
+
+	<iframe 
+  src="https://drive.google.com/file/d/1KSemT09wbh1dOLl_H3dFcRIpA53YXBft/preview" 
+  width="300" height="500" allow="autoplay" frameborder="0" allowfullscreen>
+</iframe>
+
+	<div class="slideshow right">
+	<img src="https://drive.google.com/thumbnail?id=15bqb1EKX8H4cC1rXSsbxMr86Fn4BjjkI&sz=w1000" alt="Birthday Photo 1" />
+	<img src="https://drive.google.com/thumbnail?id=1iA3eHM5xuh0lX2hOHbRbCNRDaZgHzjwq&sz=w1000" alt="Birthday Photo 2" />
+	<img src="https://drive.google.com/thumbnail?id=10DY47_v4wzdik5OdF7_HTIfAia5AUDk_&sz=w1000" alt="Birthday Photo 3" />
+	<img src="https://drive.google.com/thumbnail?id=1Bi0rPdhEDZNYwt9u4eN0_lu4aOV9i-ld&sz=w1000" alt="Birthday Photo 4" />
+	<img src="https://drive.google.com/thumbnail?id=1kr6HQbK5MuelZ-oZpNgsI2OVhreP7yDL&sz=w1000" alt="Birthday Photo 5" />
+
+
+	</div>
+</div>
+
+  <button id="memoriesBtn" onclick="goToMemories()">See Memories</button>
+
+  <script>
+    const symbols = ["🎈","❤️","💖","💙","💜"];
+    function createSymbol() {
+      let sym = document.createElement('div');
+      sym.className = 'symbol';
+      sym.style.left = Math.random() * 100 + 'vw';
+      sym.style.animationDuration = (6 + Math.random() * 4) + 's';
+      sym.style.fontSize = (18 + Math.random() * 20) + 'px';
+      sym.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+      document.body.appendChild(sym);
+      setTimeout(() => {
+        sym.remove();
+      }, 10000);
+    }
+    setInterval(createSymbol, 400);
+
+    function goToMemories() {
+      window.location.href = "memories.html";
+    }
+  </script>
+</body>
+</html>

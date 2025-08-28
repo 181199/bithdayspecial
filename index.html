@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Birthday Special - Password</title>
+<style>
+  body {
+    margin:0; height:100vh; display:flex; justify-content:center; align-items:center;
+    background: linear-gradient(135deg,#fceabb,#f8b500);
+    font-family:sans-serif;
+  }
+  #login-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    text-align:center;
+  }
+  input {
+    padding:0.7rem;
+    border:1px solid #ccc;
+    border-radius:0.5rem;
+    font-size:1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  button {
+    background:#f8b500;
+    color:#fff;
+    border:none;
+    padding:0.7rem 1.5rem;
+    border-radius:0.5rem;
+    font-size: 1rem;
+    cursor:pointer;
+  }
+</style>
+</head>
+<body>
+  <div id="login-box">
+    <h2>Enter Password 🎂</h2>
+    <input type="password" id="password" placeholder="Password" />
+    <br/>
+    <button onclick="checkPassword()">Enter</button>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const pwd = document.getElementById("password").value;
+      if(pwd === "181199") {
+        window.location.href = "cake.html";
+      } else {
+        alert("Incorrect password! Try: birthday");
+      }
+    }
+  </script>
+</body>
+</html>
